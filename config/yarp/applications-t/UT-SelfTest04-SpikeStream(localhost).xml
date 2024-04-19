@@ -1,0 +1,17 @@
+<application>
+    <name>UT-SelfTest CARLsimGUI (localhost)</name>
+    <description>UT SelfTest 04 localhost only starts CARLsimGUI on the correct workdir</description>
+    <version>1.0</version>
+    
+    <module>
+        <name>carlsimgui.exe</name>
+
+<!-- neg test: cannot find file        
+        <parameters>unittest01.config</parameters> 
+-->
+        <workdir>CARLsimGUI</workdir>       
+        <node>localhost</node>
+    </module>
+
+  
+</application>

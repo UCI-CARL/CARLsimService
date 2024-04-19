@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<CarlsimWidget>
+
+  <Injectors>
+
+    <Injector type="Current">
+      <Properties>
+        <Property name="Percentage" type="double">100</Property>
+        <Property name="Current" type="double">-67</Property>
+        <Property name="Active" type="bool">true</Property> 
+      </Properties>
+      <NeuronGroup name="dlPFC.states"/>
+    </Injector>
+    
+   <Injector type="Current">
+      <Properties>
+        <Property name="Percentage" type="double">17</Property>
+        <Property name="Current" type="double">20</Property>
+        <Property name="Active" type="bool">false</Property> 
+      </Properties>
+      <NeuronGroup name="dlPFC.in"/>
+    </Injector>
+  
+    <Injector type="Current">
+      <Properties>
+        <Property name="Percentage" type="double">100</Property>
+        <Property name="Current" type="double">67</Property>
+        <Property name="Active" type="bool">false</Property> 
+      </Properties>
+      <NeuronGroup name="dlPFC.fuse"/>
+    </Injector>
+
+<!--
+    [USER ERROR setSpikeGenerator("Order")] setSpikeGenerator("Order") cannot be called on this neuron type.
+    <Injector type="Fire">
+      <Properties>
+        <Property name="Percentage" type="double">20</Property>
+        <Property name="Active" type="bool">false</Property> 
+      </Properties>
+      <NeuronGroup name="Order"/>
+    </Injector>
+-->
+
+    <Injector type="Current">
+      <Properties>
+        <Property name="Percentage" type="double">100</Property>
+        <Property name="Current" type="double">15</Property>
+        <Property name="Active" type="bool">false</Property> 
+      </Properties>
+      <NeuronGroup name="Order"/>
+    </Injector>
+    
+    <Injector type="Current">
+      <Properties>
+        <Property name="Percentage" type="double">5</Property>
+        <Property name="Current" type="double">20</Property>
+        <Property name="Active" type="bool">false</Property> 
+      </Properties>
+      <NeuronGroup name="Trade"/>
+    </Injector>
+      
+    
+ </Injectors>
+
+</CarlsimWidget>

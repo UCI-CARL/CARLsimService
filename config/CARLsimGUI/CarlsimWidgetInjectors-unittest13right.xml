@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<CarlsimWidget>
+
+  <Injectors>
+
+    <Injector type="Current">
+      <Properties>
+        <Property name="Percentage" type="double">2</Property>
+        <Property name="Current" type="double">60</Property>
+        <Property name="Active" type="bool">false</Property> 
+      </Properties>
+      <NeuronGroup name="Excitatory neuron group"/>
+    </Injector>
+          
+ </Injectors>
+
+</CarlsimWidget>

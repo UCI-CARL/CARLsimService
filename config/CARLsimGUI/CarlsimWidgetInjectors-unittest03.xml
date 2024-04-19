@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  Generic
+<NemoWidget>
+  <Injectors>
+    <Injector/>
+  </Injectors>
+</NemoWidget>
+-->
+
+<CarlsimWidget>
+
+  <Injectors>
+  
+    <Injector type="Current">
+      <Properties>
+        <Property name="Active" type="bool">false</Property>
+        <Property name="Percentage" type="double">30</Property>
+        <Property name="Current" type="double">100</Property>
+      </Properties>
+      <NeuronGroup name="Tick"/>
+    </Injector>
+
+   </Injectors>
+
+
+</CarlsimWidget>

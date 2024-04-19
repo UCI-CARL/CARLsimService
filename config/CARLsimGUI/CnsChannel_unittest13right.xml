@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+ 
+<CARLsimCNS>     
+    
+    <OutboundChannel name="Firing Outbound Channel">
+    <Properties>
+      <Property name="Sparse Coding" type="int">1</Property>     
+      <Property name="Neuron Height" type="int">3</Property>      
+      <Property name="Neuron Width" type="int">10</Property>      
+      <Property name="Axonal Tract">ctx1.r2l</Property>
+      <Property name="Spikes Log">../../var/log/SpikeStream_Unittest13_RightOut_Spikes.log</Property> 
+    </Properties>
+    <Writer name="Yarp Firing Writer" type="Firing Writer">
+      <Properties>
+        <Property name="Yarp Portprefix">/cns/outbound/ctx.right</Property>           
+        <Property name="Yarp Log">../../var/log/SpikeStream_Unittest13_RightOut_Yarp.log</Property>      
+        <Property name="Buffer Log">../../var/log/SpikeStream_Unittest13_RightOut_Buffer.log</Property>
+        <!-- -->
+      </Properties>
+    </Writer>
+    <NeuronGroup name="ctx1.right.exc.out"/>
+  </OutboundChannel>  
+  
+  <InboundChannel name="Firing Inbound Channel">
+    <Properties>
+      <Property name="Sparse Coding" type="int">1</Property>     
+      <Property name="Neuron Height" type="int">3</Property>      
+      <Property name="Neuron Width" type="int">10</Property>      
+      <Property name="Axonal Delay" type="int">20</Property>
+      <Property name="Axonal Tract">ctx1.l2r</Property>              
+      <Property name="Spikes Log">../../var/log/SpikeStream_Unittest13_RightIn_Spikes.log</Property> 
+    </Properties>
+    <Reader name="Yarp Firing Reader" type="Firing Reader">
+      <Properties>
+        <Property name="Yarp Portprefix">/cns/inbound/ctx.right</Property>      
+        <Property name="Yarp Log">../../var/log/SpikeStream_Unittest13_RightIn_Yarp.log</Property>      
+        <Property name="Buffer Log">../../var/log/SpikeStream_Unittest13_RightIn_Buffer.log</Property>
+      </Properties>
+    </Reader>
+    <NeuronGroup name="ctx1.right.exc.in"/>
+  </InboundChannel>  
+  
+</CARLsimCNS>
+
+
+
+

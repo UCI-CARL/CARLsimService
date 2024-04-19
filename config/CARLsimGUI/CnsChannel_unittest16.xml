@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<CARLsimCNS>     
+    
+  <InboundChannel name="WbSensor Inbound Channel">
+    <Properties>
+      <Property name="Sensor Prefix">tof</Property>              
+      <Property name="Neuron Height" type="int">2</Property>
+      <Property name="Sensor Lifespan" type="int">32</Property>             
+      <Property name="Backend" type="int">0</Property> 
+      <Property name="Peak Current" type="double">40</Property>
+      <Property name="Constant Current" type="double">0</Property>
+      <Property name="Spikes Log">../../var/log/SpikeStream_Unittest16_tof_Spikes.log</Property> 
+    </Properties>
+    <Reader name="Yarp WbSensor Reader" type="WbSensor Reader">
+      <Properties>      
+        <Property name="Yarp Reading Port">/cns/inbound/wb/e-puck2/tof</Property>      
+        <Property name="Yarp Writing Port">/wb/e-puck2/sensors</Property>      
+        <Property name="Yarp RPC Server Port">/wb/e-puck2/supervisor</Property>      
+        <Property name="Yarp RPC Client Port">/cns/client/wb/epuck2/tof</Property>      
+        <Property name="Yarp Log">../../var/log/SpikeStream_Unittest16_tof_Yarp.log</Property>      
+        <Property name="Buffer Log">../../var/log/SpikeStream_Unittest16_tof_Buffer.log</Property>
+      </Properties>
+    </Reader>
+    <NeuronGroup name="ctx.tof"/>
+  </InboundChannel>    
+    
+  <InboundChannel name="WbSensor Inbound Channel">
+    <Properties>
+      <Property name="Sensor Prefix">ps</Property>              
+      <Property name="Neuron Height" type="int">1</Property>
+      <Property name="Sensor Lifespan" type="int">32</Property>      
+      <Property name="Backend" type="int">0</Property> 
+      <Property name="Peak Current" type="double">60</Property>
+       
+      <Property name="Constant Current" type="double">0</Property>
+      <Property name="Spikes Log">../../var/log/SpikeStream_Unittest15_ps_Spikes.log</Property> 
+    </Properties>
+    <Reader name="Yarp WbSensor Reader" type="WbSensor Reader">
+      <Properties>      
+        <Property name="Yarp Reading Port">/cns/inbound/wb/e-puck2/ps</Property>      
+        <Property name="Yarp Writing Port">/wb/e-puck2/sensors</Property>      
+        <Property name="Yarp RPC Server Port">/wb/e-puck2/supervisor</Property>      
+        <Property name="Yarp RPC Client Port">/cns/client/wb/epuck2/ps</Property>      
+        <Property name="Yarp Log">../../var/log/SpikeStream_Unittest16_ps_Yarp.log</Property>      
+        <Property name="Buffer Log">../../var/log/SpikeStream_Unittest16_ps_Buffer.log</Property>
+      </Properties>
+    </Reader>
+    <NeuronGroup name="ctx.ps"/>
+  </InboundChannel>  
+  
+  <OutboundChannel name="WbActuator Outbound Channel">
+    <Properties>
+      <Property name="Actuator Prefix">vel</Property>              
+      <Property name="Neuron Height" type="int">2</Property>
+
+      <Property name="Max" type="double">3.5</Property>
+      <Property name="Min" type="double">-3.5</Property>
+      <Property name="Current Increment" type="double">0.5</Property>
+      <Property name="Rate of Decay" type="double">0.1</Property>
+      <Property name="Threshold" type="double">0.01</Property>
+         
+      <Property name="Coding Log">../../var/log/SpikeStream_Unittest16_vel_Coding.log</Property> 
+      <Property name="Spikes Log">../../var/log/SpikeStream_Unittest16_vel_Spikes.log</Property>
+       
+    </Properties>
+    <Writer name="Yarp WbActuator Writer" type="WbActuator Writer">
+      <Properties>      
+        <Property name="Yarp Writing Port">/cns/outbound/wb/e-puck2</Property>      
+        <Property name="Yarp Reading Port">/wb/e-puck2/actuators</Property>      
+        <Property name="Yarp RPC Server Port">/wb/e-puck2/supervisor</Property>      
+        <Property name="Yarp RPC Client Port">/cns/client/wb/epuck2/vel</Property>      
+        <Property name="Yarp Log">../../var/log/SpikeStream_Unittest16_vel_Yarp.log</Property>      
+        <Property name="Buffer Log">../../var/log/SpikeStream_Unittest16_vel_Buffer.log</Property>
+      </Properties>
+    </Writer>
+    <NeuronGroup name="ctx.vel"/>
+  </OutboundChannel>  
+  
+</CARLsimCNS>
+
+
+
+

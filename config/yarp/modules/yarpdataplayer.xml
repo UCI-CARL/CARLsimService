@@ -1,0 +1,17 @@
+<module>
+    <name>yarpdatadumper</name>
+    <description>YAPR Datadumper  http://yarp.it/yaprdatadumper.html</description>
+    
+     <!-- <data> can have multiple <input> or <output> tags. -->
+     <data>
+        <!-- input data if available-->
+        <input>
+            <type>DataType</type>
+            <port carrier="tcp">/DataDumper</port>
+            <required>no</required>
+            <priority>no</priority>
+            <description></description>
+        </input>
+    </data>
+        
+</module>

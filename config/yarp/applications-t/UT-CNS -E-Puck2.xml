@@ -1,0 +1,92 @@
+<application>
+    <name>CARLsimCNS_E-Puck2</name>
+    <description>CARLsim CNS E-Puck2 Neuromophic Brain</description>
+    <version>1.0</version>
+    
+<!--  Interactive 
+      
+yarp rpc /wb/e-puck2/supervisor
+yarp connect  --persist /input /wb/e-puck2/actuators
+yarp connect  --persist /wb/e-puck2/sensors /epuck/ps    
+
+ln@mifcom1win2120:/mnt/c/temp$ tail -f 1 -n 80 spikes.log
+
+
+yarp write /sensory_input
+
+yarp connect /sensory_input /cns/inbound/wb/e-puck2/tof
+[tof] 400
+[tof] 20
+
+yarp connect /sensory_input /cns/inbound/wb/e-puck2/ps
+[ps] 60 60 60 60  60 60 60 60
+[ps] 120 60 60 60  60 60 60 60
+[ps] 60 120 60 60  60 60 60 60
+[ps] 60 80 120 60  60 60 60 60
+[ps] 60 60 80 120  60 60 60 60
+[ps] 60 60 60 60  60 60 60 60
+
+
+yarp read /monitor_actuators
+[vel] 0.0 -5.0
+[vel] -0.84470785646076463 0.0
+[vel] -1.1116506728487856 0.0
+[vel] 5.0 -5.0
+
+yarp connect --persist /cns/outbound/wb/e-puck2 /monitor_actuators
+yarp connect /sensory_input /cns/inbound/wb/e-puck2/tof
+ 
+yarp disconnect /cns/outbound/wb/e-puck2 /monitor_actuators
+yarp disconnect /sensory_input /cns/inbound/wb/e-puck2/tof
+
+
+C:\Users\LN>yarp write /sensory_input
+
+
+
+-->    
+    
+    <connection persist="true">
+        <from>/wb/e-puck2/sensors</from>
+        <to>/cns/inbound/wb/e-puck2/tof</to>
+        <protocol>tcp</protocol>
+    </connection>
+
+    <connection persist="true">
+        <from>/wb/e-puck2/sensors</from>
+        <to>/cns/inbound/wb/e-puck2/ps</to>
+        <protocol>tcp</protocol>
+    </connection>
+
+    <!-- TODO needs to be specialized /cns/outbound/wb/e-puck2/vel  --> 
+    <connection persist="true">
+        <from>/cns/outbound/wb/e-puck2</from>              
+        <to>/wb/e-puck2/actuators</to>
+        <protocol>tcp</protocol>
+    </connection>
+
+    <module>
+        <name>webots.exe</name>
+        <parameters>e-puck2\worlds\e-puck2.wbt</parameters>        
+        <workdir>wb</workdir>
+        <node>/win-edge</node>        
+        <ensure>
+          <wait when="start">2.5</wait>   <!-- wait for 2.5 sec ms after running the module   -->
+        </ensure>    
+    </module>        
+                  
+    <module>
+        <name>CarlWbEPuck</name>
+        <parameters>--log info  --from CarlWbEPuck_basic.ini --context T</parameters>
+        <node>/win-yarp</node>      
+        <prefix></prefix>
+    </module>         
+                 
+    <module>
+        <name>carlsimgui.exe</name>
+        <parameters>unittest15_epuck_sensory_cortex.config</parameters> 
+        <workdir>CARLsimGUI</workdir>
+        <node>/win-gpu</node>
+    </module>
+       
+</application>

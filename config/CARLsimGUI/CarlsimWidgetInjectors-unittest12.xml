@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<CarlsimWidget>
+
+  <Injectors>
+
+    <Injector type="Current">
+      <Properties>
+        <Property name="Percentage" type="double">30</Property>
+        <Property name="Current" type="double">30</Property>
+        <Property name="Active" type="bool">false</Property> 
+      </Properties>
+      <NeuronGroup name="out"/>
+    </Injector>
+    
+   <Injector type="Current">
+      <Properties>
+        <Property name="Percentage" type="double">100</Property>
+        <Property name="Current" type="double">200</Property>
+        <Property name="Active" type="bool">true</Property> 
+      </Properties>
+      <NeuronGroup name="Unnamed"/>
+    </Injector>
+      
+ </Injectors>
+
+</CarlsimWidget>

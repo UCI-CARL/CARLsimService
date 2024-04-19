@@ -1,0 +1,34 @@
+<application>
+    <name>CARLsimCNS-CC,Ctx </name>
+    <description>CARLsim CNS Copus Callosum, Cortex Tracks</description>
+    <version>1.0</version>
+    
+    
+    <connection persist="true">
+        <from>/cns/outbound/ctx.left</from>
+        <to>/cns/inbound/ctx.right</to>
+        <protocol>tcp</protocol>
+    </connection>
+
+    <connection persist="true">
+        <from>/cns/outbound/ctx.right</from>
+        <to>/cns/inbound/ctx.left</to>
+        <protocol>tcp</protocol>
+    </connection>
+          
+                 
+    <module>
+        <name>carlsimgui.exe</name>
+        <parameters>unittest13left.config</parameters> 
+        <workdir>CARLsimGUI</workdir>
+        <node>win-gpu</node>
+    </module>
+
+    <module>
+        <name>carlsimgui.exe</name>
+        <parameters>unittest13right.config</parameters> 
+        <workdir>CARLsimGUI</workdir>
+        <node>win-gpu</node>
+    </module>
+       
+</application>

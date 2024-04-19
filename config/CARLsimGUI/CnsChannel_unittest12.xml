@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+ 
+<CARLsimCNS>     
+    
+    <OutboundChannel name="Firing Outbound Channel">
+    <Properties>
+<!--
+      <Property name="Securities">n/a</Property>
+      <Property name="Rate of Decay" type="double">0.1</Property>
+      <Property name="Current Increment" type="double">30</Property>
+      <Property name="Threshold" type="double">1.2</Property> 
+-->
+
+<!-- 
+  Format:  
+      AER  for sparse,  .. list of local neuron ids
+      BITMAP  compressed  
+
+      ->  this is only relevant for the Writer, YARP writer ,.. 
+      
+      Sparse Coding =  1 => AER = true => AER
+      Compressed   => Dense     
+      Sparse  => AER 
+      Binary
+-->
+      <Property name="Sparse Coding" type="int">1</Property>
+      
+      <Property name="Neuron Height" type="int">4</Property>      
+      <Property name="Neuron Width" type="int">3</Property>      
+
+      <Property name="Axonal Track">left2right</Property>
+                                                           
+      <Property name="Coding Log">../../var/log/SpikeStream_Unittest12_Firing_Coding.log</Property>         
+      <Property name="Spikes Log">../../var/log/SpikeStream_Unittest12_Firing_Spikes.log</Property> 
+    </Properties>
+    <Writer name="Yarp Firing Writer" type="Firing Writer">
+      <Properties>
+
+        <Property name="Yarp Portprefix">/cns/outbound/firing</Property>           
+      
+        <!--  
+        <Property name="Neuron Group">o:l</Property>   Translation of Neuron Group name for Yarp Port  
+        <Property name="Format" type="int">50</Property> 
+        <Property name="Protocol">AER</Property>                    
+        -->      
+      
+        <Property name="Yarp Log">../../var/log/SpikeStream_Unittest12_Firing_Yarp.log</Property>      
+        <Property name="Buffer Log">../../var/log/SpikeStream_Unittest12_Firing_Buffer.log</Property>
+        <!-- -->
+      </Properties>
+    </Writer>
+    <NeuronGroup name="out"/>
+  </OutboundChannel>  
+  
+  
+  <!--   Translation of the sending Neuron Group name for Yarp Port  -->  
+  <InboundChannel name="Firing Inbound Channel">
+    <Properties>
+      <Property name="Sparse Coding" type="int">1</Property>
+      
+      <Property name="Neuron Height" type="int">4</Property>      
+      <Property name="Neuron Width" type="int">3</Property>      
+
+      <Property name="Axonal Delay" type="int">2</Property>
+      <Property name="Axonal Track">left2right</Property>
+              
+      <Property name="Spikes Log">../../var/log/SpikeStream_Unittest12_FiringIn_Spikes.log</Property> 
+
+    </Properties>
+    
+    <Reader name="Yarp Firing Reader" type="Firing Reader">
+      <Properties>
+
+        <Property name="Yarp Portprefix">/cns/inbound/firing</Property>      
+        
+        <!--     
+        <Property name="Neuron Group">i:l</Property>
+        -->   
+      
+        <Property name="Yarp Log">../../var/log/SpikeStream_Unittest12_FiringIn_Yarp.log</Property>      
+        <Property name="Buffer Log">../../var/log/SpikeStream_Unittest12_FiringIn_Buffer.log</Property>
+
+      </Properties>
+    </Reader>
+    <NeuronGroup name="in"/>
+    
+  </InboundChannel>  
+
+    
+  
+</CARLsimCNS>
+
+
+
+

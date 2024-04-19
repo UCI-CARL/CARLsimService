@@ -1,0 +1,19 @@
+<application>
+    <name>CARLsimCNS-CC,left2right </name>
+    <description>CARLsim CNS Copus Callosum, left-to-right Track</description>
+    <version>1.0</version>
+    
+    <connection persist="true">
+        <from>/cns/outbound/firing</from>
+        <to>/cns/inbound/firing</to>
+        <protocol>tcp</protocol>
+    </connection>
+                 
+    <module>
+        <name>carlsimgui.exe</name>
+        <parameters>unittest12.config</parameters> 
+        <workdir>CARLsimGUI</workdir>
+        <node>win-gpu</node>
+    </module>
+       
+</application>

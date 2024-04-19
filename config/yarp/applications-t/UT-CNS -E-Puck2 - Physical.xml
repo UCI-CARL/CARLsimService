@@ -1,0 +1,41 @@
+<application>
+    <name>CARLsimCNS_E-Puck2 5541</name>
+    <description>CARLsimGUI - Giving E-Puck2 a Neuromophic Brain</description>
+    <version>1.0</version>
+                      
+            
+    <module>
+        <name>CarlEpuck2</name>
+        <parameters>--log info  --context T</parameters>
+        <node>/win-yarp</node>      
+        <prefix></prefix>
+    </module>         
+                 
+    <module>
+        <name>carlsimgui.exe</name>
+        <parameters>unittest17_epuck_sensory_cortex.config</parameters> 
+        <workdir>CARLsimGUI</workdir>
+        <node>/win-gpu</node>
+    </module>
+       
+
+    <connection persist="false">
+        <from>/e-puck2/sensors</from>
+        <to>/cns/inbound/e-puck2/tof</to>
+        <protocol>tcp</protocol>
+    </connection>
+
+    <connection persist="false">
+        <from>/e-puck2/sensors</from>
+        <to>/cns/inbound/e-puck2/ps</to>
+        <protocol>tcp</protocol>
+    </connection>
+
+    <connection persist="false">
+        <from>/cns/outbounde-puck2</from>              
+        <to>/e-puck2/actuators</to>
+        <protocol>tcp</protocol>
+    </connection>
+
+
+</application>

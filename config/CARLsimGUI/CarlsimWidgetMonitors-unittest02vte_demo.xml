@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  Generic
+<CarlsimWidget>
+  <Montitors>
+    <Monitor/>
+  </Monitors>
+</CarlsimWidget>
+-->
+
+<CarlsimOat>
+
+  <Monitors>
+             
+    <!-- used by the Eprop Experiment 
+        settings should not be altered without reason
+        spike matrix used by WaveFront algorithm
+        The statistics will be used later for NM4 development (Eligibility Trace) 
+                
+        Persist true -> keeps the spike times despite stop/restart
+        
+        Demo: Activate Refresh, Stop Monitor, see Spike Times
+        Click Statistics -> see Statistisc 
+        Save as HTML 
+        
+        
+    -->             
+    <Monitor type="spike">
+      <Link object="NeuronGroup" name="CA1 Place Cells"/>
+      <Properties>
+        <Property name="Active" type="bool">true</Property>
+        <Property name="Persistent" type="bool">false</Property>   
+        <Property name="Path" type="string">DEFAULT</Property>      
+        <Property name="Start" type="int">0</Property> 
+        <Property name="End" type="int">-1</Property>     
+      </Properties>
+    </Monitor>
+  
+<!--
+   <Monitor type="neuron">
+      <Link object="NeuronGroup" name="CA1 Place Cells"/>
+      <Properties>
+        <Property name="Active" type="bool">false</Property>
+        <Property name="Persistent" type="bool">false</Property>   
+        <Property name="Path" type="string">DEFAULT</Property>      
+        <Property name="Start" type="int">1</Property> 
+        <Property name="End" type="int">-1</Property>     
+      </Properties>
+    </Monitor>
+
+
+-->
+
+<!--
+CRASH  connFileId_ is corrupt
+ in
+void ConnectionMonitorCore::writeConnectFileSnapshot(
+	if (!fwrite(&wtTimeWrite_,sizeof(long long),1,connFileId_))
+	
+
+	
+    <Monitor type="connection">
+      <Link object="ConnectionGroup" name="Undescribed"/>
+      <Properties>
+        <Property name="Aktiv" type="bool">false</Property>
+        <Property name="Persistent" type="bool">false</Property>
+        <Property name="Start" type="int">10</Property> 
+        <Property name="End" type="int">-1</Property>
+        <Property name="Period" type="int">100</Property>
+      </Properties>
+    </Monitor>
+  -->	
+
+
+  </Monitors>
+
+</CarlsimOat>

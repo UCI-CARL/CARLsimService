@@ -1,0 +1,21 @@
+<resources>
+
+    <computer>
+        <name>win-gpu</name>
+        <description>a virtual node</description>
+       <disable>no</disable>
+    </computer>
+
+    <computer>
+        <name>win-yarp</name>
+        <description>another virtual node</description>
+       <disable>no</disable>
+    </computer>
+    
+    <computer>
+        <name>win-edge</name>
+        <description>another virtual node</description>
+       <disable>no</disable>
+    </computer>
+    
+</resources>

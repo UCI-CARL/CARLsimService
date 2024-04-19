@@ -1,0 +1,123 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+#EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+#EXTERNPROTO "C:/Users/LN/Documents/wb/e-puck2/protos/E-puck.proto"
+EXTERNPROTO "../protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/samples/robotbenchmark/maze_runner/protos/MazeBlock.proto"
+
+WorldInfo {
+  info [
+    "The model of the e-puck 2 robot"
+  ]
+  title "e-puck simulation"
+}
+Viewpoint {
+  orientation -0.32633307182407933 -0.7182143360608372 0.6145525963744284 5.159802084354823
+  position -1.9918956519414992 1.2809895496543224 2.7499472745919733
+  follow "e-puck2"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation -0.14 -0.08 0
+  floorSize 2 2
+}
+
+MazeBlock {
+  hidden linearVelocity_0 -2.8186435234732185e-18 -1.4933606121320742e-17 -2.1930763921775446e-17
+  hidden angularVelocity_0 -1.4320736199356638e-16 -1.7505243998807063e-16 3.1478080641443373e-18
+  translation 0.10974095640776663 0.39862014263297313 -3.825899999999882e-05
+  rotation -4.023566842213973e-17 3.172464940053499e-17 1 1.5650288077917405
+  name "maze block(2)"
+  length 1
+}
+MazeBlock {
+  translation 0.10250400000000001 -0.848829 -3.825307741622125e-05
+  rotation 2.7001606421522574e-17 -2.6167491538388263e-17 1 1.56502
+  name "maze block(10)"
+  length 1
+}
+MazeBlock {
+  hidden linearVelocity_0 3.50417603921411e-08 -2.02097259674964e-10 -7.614382255148794e-12
+  hidden angularVelocity_0 -2.4116124601399634e-10 -7.939497095500152e-10 -1.7903699154131617e-08
+  translation 0.3563820014366065 -0.20053221233776855 0.007480870607200861
+  rotation 0.5762533910852725 -0.5795378174259004 0.576253370867319 2.0911168610871034
+  name "maze block(6)"
+  length 0.5
+}
+MazeBlock {
+  hidden linearVelocity_0 5.764443246383097e-18 1.645880089029114e-16 -2.943463647989585e-17
+  hidden angularVelocity_0 -5.065505326733941e-15 3.1833382223070733e-16 3.383134170626945e-18
+  translation 0.35795649036000426 0.07126331803885133 -1.912949999999941e-05
+  rotation -1.212787861082412e-16 1.1633934656449163e-16 1 1.5650424028085914
+  name "maze block(1)"
+  length 0.5
+}
+MazeBlock {
+  hidden linearVelocity_0 1.6770005922617807e-07 -9.11134688054498e-10 -1.6950999009005058e-11
+  hidden angularVelocity_0 -2.6166272879170653e-09 -5.4961384640990896e-09 6.567984378358805e-10
+  translation 0.3537586001365075 -0.6552640415926206 -1.9129567894834998e-05
+  rotation 8.304802418706e-08 2.0766140924584518e-08 0.9999999999999962 1.565023068335532
+  name "maze block(9)"
+  length 0.5
+}
+MazeBlock {
+  translation -0.3662501705651508 -0.6511081241432806 -1.912532532022393e-05
+  rotation 8.4942425212875e-06 -9.065760892729514e-06 0.9999999999228301 1.5650230568880412
+  name "maze block(11)"
+  length 0.5
+}
+MazeBlock {
+  hidden linearVelocity_0 -1.5912296532904634e-18 1.5096422968041797e-16 2.7237482819936965e-17
+  hidden angularVelocity_0 -4.7419026113715415e-15 -9.368900799116731e-18 4.434347417415007e-18
+  translation -0.6391022188261847 0.09246875158690682 -3.825899999999882e-05
+  rotation -1.4952329979637864e-16 1.519807061922563e-16 1 1.5640811210738372
+  name "maze block(7)"
+  length 1
+}
+MazeBlock {
+  translation -0.630014 -0.190072 -3.825307741622819e-05
+  rotation -5.921560552756128e-19 1.1806910156841195e-17 0.9999999999999999 1.5709081328397507
+  name "maze block(4)"
+  length 1
+}
+MazeBlock {
+  translation -0.1139222365515219 -0.4316319301315752 -1.9127750377954944e-05
+  rotation -0.0002888167945318914 0.023854264639516193 0.9997154048244766 0.02423510062766242
+  name "maze block(3)"
+  length 0.5
+}
+MazeBlock {
+  hidden linearVelocity_0 2.3683140622410566e-08 -1.004739821078649e-10 5.946087610890316e-11
+  hidden angularVelocity_0 4.0089101259826104e-08 6.972623300520655e-06 -4.666169908966473e-07
+  translation 0.09755180066789312 -0.4315733106457924 -1.9129483466558128e-05
+  rotation -7.699562483678349e-05 -0.026734355948044304 -0.9996425702638503 0.0057557159002378545
+  name "maze block(5)"
+  length 0.5
+}
+MazeBlock {
+  hidden linearVelocity_0 3.490445670815139e-17 -7.324406064787428e-18 4.1868174702645124e-17
+  hidden angularVelocity_0 2.800034724541723e-16 1.3872764708535427e-15 -1.6548530142427128e-17
+  translation -0.8897937959389541 -0.45256990610321857 -1.9129499999992472e-05
+  rotation -4.090800498366196e-10 2.1478941112073084e-08 -0.9999999999999998 8.120894306686132e-09
+  name "maze block(8)"
+  length 0.5
+}
+E-puck {
+  hidden position_0_0 2030.6371761583548
+  hidden position_0_1 2334.66978751062
+  hidden rotation_1 0 -1 0 5.114863367831214
+  hidden rotation_2 0 -1 0 2.6751467601860157
+  translation 0 0 0
+  rotation 0 0 0 0
+  name "e-puck2"
+  controller "<extern>"
+  version "2"
+  camera_width 160
+  camera_height 120
+}

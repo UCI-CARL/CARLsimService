@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<CarlsimOat>
+
+  <Monitors>
+  
+    <Monitor type="spike">
+      <Link object="NeuronGroup" name="ctx.tof"/>
+      <Properties>
+        <Property name="Active" type="bool">true</Property>
+        <Property name="Persistent" type="bool">false</Property>   
+        <Property name="Path" type="string">DEFAULT</Property>      
+        <Property name="Start" type="int">0</Property> 
+        <Property name="End" type="int">-1</Property>     
+      </Properties>
+    </Monitor>
+    
+    <Monitor type="spike">
+      <Link object="NeuronGroup" name="ctx.ps"/>
+      <Properties>
+        <Property name="Active" type="bool">true</Property>
+        <Property name="Persistent" type="bool">false</Property>   
+        <Property name="Path" type="string">DEFAULT</Property>      
+        <Property name="Start" type="int">0</Property> 
+        <Property name="End" type="int">-1</Property>     
+      </Properties>
+    </Monitor>
+    
+    <Monitor type="spike">
+      <Link object="NeuronGroup" name="ctx.vel"/>
+      <Properties>
+        <Property name="Active" type="bool">true</Property>
+        <Property name="Persistent" type="bool">false</Property>   
+        <Property name="Path" type="string">DEFAULT</Property>      
+        <Property name="Start" type="int">0</Property> 
+        <Property name="End" type="int">-1</Property>     
+      </Properties>
+    </Monitor>
+    
+  </Monitors>
+
+</CarlsimOat>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  Generic
+<CarlsimWidget>
+  <Montitors>
+    <Monitor/>
+  </Monitors>
+</CarlsimWidget>
+-->
+
+<CarlsimWidget>
+
+  <Monitors>
+
+    <Monitor type="spike">
+      <Group name="in"/>
+      <Description 
+      <Properties>
+        <Property name="Aktiv" type="bool">true</Property>
+        <Property name="File" type="string">DEFAULT</Property>
+        <Property name="Persistent" type="bool">false</Property>
+      </Properties>
+    </Monitor>
+
+    <Monitor type="connection">
+      <Group name="p1"/>
+	<Description>Learning DAmSTDP</Description>
+      <Properties>
+        <Property name="Aktiv" type="bool">true</Property>
+        <Property name="File" type="string">DEFAULT</Property>
+        <Property name="Persistent" type="bool">false</Property>
+      </Properties>
+    </Monitor>
+
+    <Monitor type="group">
+      <Group name="g1.exec"/>
+      <Properties>
+        <Property name="Aktiv" type="bool">true</Property>
+        <Property name="File" type="string">DEFAULT</Property>
+        <Property name="Persistent" type="bool">false</Property>
+      </Properties>
+    </Monitor>
+
+   </Monitors>
+
+</CarlsimWidget>
