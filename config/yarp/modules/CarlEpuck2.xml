@@ -1,0 +1,24 @@
+<module>
+    <name>CarlEpuck2</name>
+    <description>CarlEpuck2</description>
+    <version>1.0</version>
+
+<!-- 
+yarpdev yarpdev --device CarlEpuck2
+
+-->
+
+
+    <deployer>yarpdev</deployer>
+ 
+    <dependencies>
+        <computer>
+        </computer>
+    </dependencies>
+
+    <development>
+        <include></include>
+        <library>YARP</library>
+    </development>   
+    
+</module>    
