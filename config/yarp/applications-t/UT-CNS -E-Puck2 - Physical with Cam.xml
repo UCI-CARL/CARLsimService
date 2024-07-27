@@ -1,21 +1,36 @@
 <application>
-    <name>CARLsimCNS_E-Puck2 5541</name>
-    <description>CARLsimGUI - Giving E-Puck2 a Neuromophic Brain</description>
+    <name>CARLsimCNS_E-Puck2 5541 (Cam)</name>
+    <description>CARLsimGUI - Physical E-Puck2  with CAM</description>
     <version>1.0</version>
-                      
-            
+       
+    <module>
+        <name>yarpview</name>
+ 		<workdir>CARLsimGUI</workdir>
+        <node>/win-yarp</node>      
+        <prefix></prefix>
+    </module> 
+                                  
     <module>
         <name>CarlEpuck2</name>
-        <parameters>--log info  --context T</parameters>
+        <parameters>--log info --from CarlEpuck2_basic.ini --context T</parameters>
         <node>/win-yarp</node>      
         <prefix></prefix>
     </module>         
-                 
+         
+
+    <connection persist="true">
+        <from>/e-puck2/cam</from>
+        <to>/yarpview/img:i</to>
+        <protocol>tcp</protocol>
+    </connection>
+
+
+
     <module>
-        <name>carlsimgui.exe</name>
+        <name>carlsimgui</name>
         <parameters>unittest17_epuck_sensory_cortex.config</parameters> 
         <workdir>CARLsimGUI</workdir>
-        <node>win-gpu</node>
+        <node>/win-gpu</node>
     </module>
        
 
