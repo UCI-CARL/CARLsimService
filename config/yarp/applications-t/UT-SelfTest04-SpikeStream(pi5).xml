@@ -1,0 +1,18 @@
+<application>
+    <name>UT-SelfTest CARLsimGUI (localhost,pi5)</name>
+    <description>UT SelfTest 05 localhost on remote DB at PI5</description>
+    <version>1.0</version>
+    
+    <module>
+        <name>carlsimgui.exe</name>
+
+<!-- neg test: cannot find file 
+-->       
+        <parameters>unittest02.config</parameters> 
+
+        <workdir>CARLsimGUI</workdir>       
+        <node>localhost</node>
+    </module>
+
+  
+</application>
