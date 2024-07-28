@@ -12,7 +12,7 @@
     </module>         
                  
     <module>
-        <name>carlsimgui.exe</name>
+        <name>carlsimgui</name>
         <parameters>unittest17_epuck_sensory_cortex.config</parameters> 
         <workdir>CARLsimGUI</workdir>
         <node>/win-gpu</node>

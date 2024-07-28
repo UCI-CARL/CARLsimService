@@ -4,7 +4,7 @@
     <version>1.0</version>
     
     <module>
-        <name>carlsimgui.exe</name>
+        <name>carlsimgui</name>
 
 <!-- neg test: cannot find file        
         <parameters>unittest01.config</parameters> 
