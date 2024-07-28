@@ -6,7 +6,7 @@
             
     <module>
         <name>CarlEpuck2</name>
-        <parameters>--log info  --context T</parameters>
+        <parameters>--log info --from CarlEpuck2_basic.ini --context T</parameters>
         <node>/win-yarp</node>      
         <prefix></prefix>
     </module>         
