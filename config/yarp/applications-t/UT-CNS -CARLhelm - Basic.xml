@@ -1,0 +1,46 @@
+<application>
+    <name>CARLsimCNS_CARLhelm E-Puck2 5541</name>
+    <description>CARLhelm - Control E-Puck2 by X3D</description>
+    <version>1.0</version>
+                      
+            
+    <module>
+        <name>CarlEpuck2</name>
+        <parameters>--log debug --from CarlEpuck2_basic.ini --context T</parameters>
+        <node>/win-yarp</node>      
+        <prefix></prefix>
+    </module>         
+
+<!--            
+    <module>
+        <name>JoypadControlServer</name>
+        <parameters>--use_separate_ports 1 --name /X3D/joypad --subdevice SDLJoypad --profile --from SDLJoypad.ini --context T</parameters>
+        <node>/win-yarp</node>
+        <node>localhost</node>
+        <prefix></prefix>
+    </module>   
+
+    <module>
+        <name>CarlController</name>
+        <parameters>--remote /X3D/joypad --local /carlctrl</parameters>
+        <node>/win-yarp</node>      
+        <prefix></prefix>
+    </module>        
+-->
+
+	<module>
+        <name>yarpdev.exe</name>
+        <parameters>--device JoypadControlServer --use_separate_ports 1 --name /X3D/joypad --subdevice SDLJoypad --profile --from SDLJoypad.ini --context T</parameters>     
+        <node>localhost</node>
+    </module>
+
+    <module>
+        <name>yarpdev.exe</name>
+        <parameters>--device CarlController --remote /X3D/joypad --local /carlctrl</parameters>
+        <node>localhost</node>
+    </module>      
+     
+
+
+
+</application>
